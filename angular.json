@@ -13,6 +13,7 @@
           "spec": false
         },
         "@schematics/angular:component": {
+          "styleext": "scss",
           "spec": false
         },
         "@schematics/angular:directive": {
@@ -20,6 +21,7 @@
         },
         "@schematics/angular:guard": {
           "spec": false
+          
         },
         "@schematics/angular:module": {
           "spec": false
@@ -45,9 +47,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "node_modules/font-awesome/scss/font-awesome.scss",
+    "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
+    "node_modules/angular-bootstrap-md/scss/mdb-free.scss",
+    "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js",
+  "node_modules/hammerjs/hammer.min.js"
+            ]
           },
           "configurations": {
             "production": {
