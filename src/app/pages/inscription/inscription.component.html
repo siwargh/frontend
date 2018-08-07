@@ -1,0 +1,57 @@
+<mdb-card>
+    <mdb-card-body>
+      <!-- Material form register -->
+      <form [formGroup]="cardForm">
+        <p class="h4 text-center py-4" style="color: dodgerblue ;">Create Your Account</p>
+  
+        <!-- Material input text -->
+        <div class="md-form">
+          <i class="fa fa-user prefix grey-text"></i>
+          <input type="text" id="materialFormCardNameEx" formControlName="materialFormCardNameEx" class="form-control" mdbInputDirective>
+          <label for="materialFormCardNameEx" class="font-weight-light">Your name</label>
+        </div>     
+        <div class="md-form">
+            <i class="fa fa-calendar-o prefix grey-text" aria-hidden="true" aria-hidden="true"></i>
+            <input type="date" id="materialFormCardConfirmDate" formControlName="materialFormCardConfirmDate" class="form-control" mdbInputDirective>
+            <label for="materialFormCardConfirmDate" class="font-weight-light">Date</label>
+          </div>
+          <div class="md-form">
+              <i  class="fa fa-address-card-o prefix grey-text" aria-hidden="true"></i>
+              <input type="text" id="materialFormCardADDEx" formControlName="materialFormCardADDEx" class="form-control" mdbInputDirective>
+              <label for="materialFormCardADDEx" class="font-weight-light">Your Adress</label>
+            </div> 
+        <!-- Material input email -->
+        <div class="md-form">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <input type="email" id="materialFormCardEmailEx" formControlName="materialFormCardEmailEx" class="form-control" mdbInputDirective>
+          <label for="materialFormCardEmailEx" class="font-weight-light">Your email</label>
+        </div>
+  
+        <!-- Material input email -->
+        <div class="md-form">
+          <i class="fa fa-exclamation-triangle prefix grey-text"></i>
+          <input type="email" id="materialFormCardConfirmEx" formControlName="materialFormCardConfirmEx" class="form-control" mdbInputDirective>
+          <label for="materialFormCardConfirmEx" class="font-weight-light">Confirm your email</label>
+        </div>
+  
+        <!-- Material input password -->
+        <div class="md-form">
+          <i class="fa fa-lock prefix grey-text"></i>
+          <input type="password" id="materialFormCardPasswordEx" formControlName="materialFormCardPasswordEx" class="form-control"
+            mdbInputDirective>
+          <label for="materialFormCardPasswordEx" class="font-weight-light">Your password</label>
+        </div>
+        <div class="md-form">
+            <i class="fa fa-exclamation-triangle prefix grey-text"></i>
+            <input type="password" id="materialFormCardPasswordEx2" formControlName="materialFormCardPasswordEx" class="form-control"
+              mdbInputDirective>
+            <label for="materialFormCardPasswordEx" class="font-weight-light">Confirm Your password</label>
+          </div>
+           
+        <div class="text-center py-4 mt-3">
+          <button mdbBtn color="danger" class="waves-light" type="submit" mdbWavesEffect>Login</button>
+        </div>
+      </form>
+      <!-- Material form register -->
+    </mdb-card-body>
+  </mdb-card>

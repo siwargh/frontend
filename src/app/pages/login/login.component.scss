@@ -1,0 +1,72 @@
+.form-gradient .font-small {
+    font-size: 0.8rem;
+  }
+  
+  .form-gradient .header {
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+  }
+  
+  .form-gradient input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #fd9267;
+    -webkit-box-shadow: 0 1px 0 0 #fd9267;
+    box-shadow: 0 1px 0 0 #fd9267;
+  }
+  
+  .form-gradient input[type=text]:focus:not([readonly])+label {
+    color: #4f4f4f;
+  }
+  
+  .form-gradient input[type=password]:focus:not([readonly]) {
+    border-bottom: 1px solid #fd9267;
+    -webkit-box-shadow: 0 1px 0 0 #fd9267;
+    box-shadow: 0 1px 0 0 #fd9267;
+  }
+  
+  .form-gradient input[type=password]:focus:not([readonly])+label {
+    color: #4f4f4f;
+  }
+  body, html {
+    height: 100%;
+}
+.row {
+  background-image: url("https://www.planwallpaper.com/static/images/violet-vector-leaves-circles-backgrounds-for-powerpoint_PdfkI4q.jpg");
+ 
+  
+}
+.fa {
+  padding: 14px ;
+  font-size: 40px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-google-plus {
+  background: #dd4b39;
+  color: white;
+}
+.media {
+   text-align: center;
+   margin-left: 50px ;
+   margin-right: 50px ;
+}
