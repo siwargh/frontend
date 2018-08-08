@@ -29,13 +29,20 @@
   body, html {
     height: 100%;
 }
-
+#im{
+  animation-name: example;
+  animation-duration: 2s;
  
+}
+
+#a{
+  animation: pulse 1s ease infinite;
+}
   
 
 .fa {
   padding: 14px ;
-  font-size: 30px;
+  font-size: 13px;
   width: 100px;
   text-align: center;
   text-decoration: none;

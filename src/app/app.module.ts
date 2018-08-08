@@ -15,6 +15,8 @@ import { HeaderComponent } from './common/header/header.component';
 import { ApiServicesComponent } from './services/api-services/api-services.component';
 import { CommonServicesComponent } from './services/common-services/common-services.component';
 
+import { RightContainerComponent } from './right-container/right-container.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,8 @@ import { CommonServicesComponent } from './services/common-services/common-servi
     HeaderComponent,
     ApiServicesComponent,
     CommonServicesComponent,
+    
+    RightContainerComponent,
     
   ],
   imports: [
