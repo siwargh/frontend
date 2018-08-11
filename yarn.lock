@@ -141,9 +141,9 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/forms@^6.0.3":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-6.1.0.tgz#7e62913b07b67d002ebddf735725d2839a6c3a63"
+"@angular/forms@^6.1.0":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-6.1.1.tgz#41aec34576d4e3fed5791b65dc6d638d180cd11e"
   dependencies:
     tslib "^1.9.0"
 
@@ -205,6 +205,10 @@
 "@types/chart.js@^2.7.30":
   version "2.7.30"
   resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.7.30.tgz#b3a973d4790ff5cbf1352ee756f4bfde5ae1cd27"
+
+"@types/gsap@^1.19.2":
+  version "1.19.2"
+  resolved "https://registry.yarnpkg.com/@types/gsap/-/gsap-1.19.2.tgz#ffa045fe9ca25f18a175fac4918e17d6a7ef8d7b"
 
 "@types/jasmine@*", "@types/jasmine@~2.8.6":
   version "2.8.8"
@@ -881,6 +885,10 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
+
+bootstrap@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.3.tgz#0eb371af2c8448e8c210411d0cb824a6409a12be"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -2628,6 +2636,10 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
+gsap@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-2.0.1.tgz#c784500e80dc7591131478f0787b67bacc9a8c52"
+
 hammerjs@^2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
@@ -3379,6 +3391,10 @@ jasmine@2.8.0:
 jasminewd2@^2.1.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/jasminewd2/-/jasminewd2-2.2.0.tgz#e37cf0b17f199cce23bea71b2039395246b4ec4e"
+
+jquery@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
 js-base64@^2.1.8:
   version "2.4.8"

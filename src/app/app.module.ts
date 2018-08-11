@@ -30,9 +30,7 @@ import { RightContainerComponent } from './right-container/right-container.compo
     HeaderComponent,
     ApiServicesComponent,
     CommonServicesComponent,
-    
     RightContainerComponent,
-    
   ],
   imports: [
     BrowserModule,
