@@ -1,17 +1,14 @@
 <div class="im">
-    <div class="aa">
-        <img id="a" src="../../../assets/images/customer-review-speech-bubble-rating.png "width="80px" height="80px"  > <strong><b>DisDonc</b></strong> 
-      
-    </div>
-    
-  
-  <!-- Collapsible content -->
-  
+  <div class="aa">
+    <img id="a" src="../../../assets/images/customer-review-speech-bubble-rating.png " width="80px" height="80px">
+    <strong>
+      <b>DisDonc</b>
+    </strong>
 
+  </div>
 
+  <div class="row">
 
-<div class="row">
-    
     <div class="col-md-5 mx-auto my-5">
       <section class="form-elegant">
         <mdb-card>
@@ -19,16 +16,16 @@
             <!--Header-->
             <div class="text-center">
               <h3 class="dark-grey-text mb-5">
-                <strong  style="color:blue;">Sign in</strong>
+                <strong style="color:blue;">Sign in</strong>
               </h3>
             </div>
-  
+
             <form [formGroup]="elegantForm">
               <div class="md-form">
                 <input type="text" id="elegantFormEmailEx" class="form-control" formControlName="elegantFormEmailEx" mdbInputDirective>
                 <label for="elegantFormEmailEx">Your email</label>
               </div>
-  
+
               <div class="md-form pb-3">
                 <input type="password" id="elegantFormPasswordEx" formControlName="elegantFormPasswordEx" class="form-control" mdbInputDirective>
                 <label for="elegantFormPasswordEx">Your password</label>
@@ -38,20 +35,23 @@
               </div>
             </form>
             <!--Body-->
-  
+
             <div>
               <button type="button" mdbBtn color="blue" block="true" rounded="true" class="z-depth-1a waves-light" mdbWavesEffect routerLink="/acceuil">Sign in</button>
             </div>
             <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in with:</p>
-  
-            
-              <!--Facebook-->
-              <button mdbBtn type="button" style="width: 100% "  class="fa fa-facebook  text-center"></button><br>
-              <!--Twitter-->
-              <button type="button" mdbBtn class="fa fa-twitter " style="width: 100%"></button><br>
-              <!--Google +-->
-              <button type="button" mdbBtn class="fa fa-google-plus " style="width: 100%"></button><br>
-          
+
+
+            <!--Facebook-->
+            <button mdbBtn type="button" style="width: 100% " class="fa fa-facebook  text-center"></button>
+            <br>
+            <!--Twitter-->
+            <button type="button" mdbBtn class="fa fa-twitter " style="width: 100%"></button>
+            <br>
+            <!--Google +-->
+            <button type="button" mdbBtn class="fa fa-google-plus " style="width: 100%"></button>
+            <br>
+
           </mdb-card-body>
           <!--Footer-->
           <div class="modal-footer mx-5 pt-3 mb-1">
@@ -60,10 +60,9 @@
             </p>
           </div>
         </mdb-card>
-  
+
       </section>
     </div>
   </div>
-  </div>
- <app-footer></app-footer>
- 
+</div>
+<app-footer></app-footer>

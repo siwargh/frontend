@@ -12,9 +12,15 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { NevbarComponent } from './common/nevbar/nevbar.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { HeaderComponent } from './common/header/header.component';
-import { ApiServicesComponent } from './services/api-services/api-services.component';
 import { CommonServicesComponent } from './services/common-services/common-services.component';
 import { RightContainerComponent } from './right-container/right-container.component';
+import { UserBadgeComponent } from './user/user-badge/user-badge.component';
+import { LeftsideUserComponent } from './user/leftsideuser/leftsideuser.component';
+import { HttpModule } from '../../node_modules/@angular/http';
+import { FormsModule } from '../../node_modules/@angular/forms';
+import { PostComponent } from './posts/post/post.component';
+import { CommentComponent } from './posts/comment/comment.component';
+import { RatingComponent } from './posts/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +34,21 @@ import { RightContainerComponent } from './right-container/right-container.compo
     NevbarComponent,
     FooterComponent,
     HeaderComponent,
-    ApiServicesComponent,
+    
     CommonServicesComponent,
     RightContainerComponent,
+    LeftsideUserComponent,
+    UserBadgeComponent,
+    PostComponent,
+    CommentComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+  
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],
