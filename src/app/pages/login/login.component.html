@@ -22,12 +22,23 @@
 
             <form [formGroup]="elegantForm">
               <div class="md-form">
-                <input type="text" id="elegantFormEmailEx" class="form-control" formControlName="elegantFormEmailEx" mdbInputDirective>
+                <input type="text" id="elegantFormEmailEx" 
+                class="form-control" 
+                formControlName="elegantFormEmailEx" 
+                mdbInputDirective
+                name="user_email"
+                [(ngModel)]="user.email">
                 <label for="elegantFormEmailEx">Your email</label>
               </div>
 
               <div class="md-form pb-3">
-                <input type="password" id="elegantFormPasswordEx" formControlName="elegantFormPasswordEx" class="form-control" mdbInputDirective>
+                <input type="password" 
+                id="elegantFormPasswordEx" 
+                formControlName="elegantFormPasswordEx" 
+                class="form-control" 
+                mdbInputDirective
+                name="user.password"
+                [(ngModel)]="user_password">
                 <label for="elegantFormPasswordEx">Your password</label>
                 <p class="font-small blue-text d-flex justify-content-end">Forgot
                   <a href="#" class="blue-text ml-1"> Password?</a>
@@ -37,7 +48,11 @@
             <!--Body-->
 
             <div>
-              <button type="button" mdbBtn color="blue" block="true" rounded="true" class="z-depth-1a waves-light" mdbWavesEffect routerLink="/acceuil">Sign in</button>
+              <button type="button" mdbBtn color="blue" 
+              block="true" rounded="true" 
+              class="z-depth-1a waves-light"
+               mdbWavesEffect 
+               (click)="login(user)">Sign in</button>
             </div>
             <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in with:</p>
 

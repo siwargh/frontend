@@ -3,8 +3,10 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { AppConfig } from '../../app.config';
 import {  ICOMMENT } from '../../models/index';
-import  {map} from 'rxjs/operators';
-
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
+import 'rxjs/add/operator/map';
 @Injectable({
   providedIn: 'root'
 })

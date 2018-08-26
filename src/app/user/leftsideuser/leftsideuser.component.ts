@@ -29,7 +29,7 @@ export class LeftsideUserComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getById("1").subscribe((data) => {
-      this.currentUser = JSON.parse(data._body);
+      this.currentUser = data;
     })
   }
 

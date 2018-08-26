@@ -22,6 +22,8 @@ import { PostComponent } from './posts/post/post.component';
 import { CommentComponent } from './posts/comment/comment.component';
 import { RatingComponent } from './posts/rating/rating.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,7 @@ import { RatingComponent } from './posts/rating/rating.component';
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot(),
+    MDBBootstrapModule.forRoot()
   
   ],
   schemas: [NO_ERRORS_SCHEMA],

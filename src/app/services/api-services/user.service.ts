@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
+
 import { AppConfig } from '../../app.config';
 import { IUser } from '../../models/index';
-import  {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  headers: Headers;
+  options: RequestOptions;
   constructor(private http: Http) { }
   
 
   getAll() {
-    return this.http.get('http://localhost:3000'+'/users', this.jwt())
+    return this.http.get('http://localhost:3000'+'/users')
     .map((response: Response) => response.json());
   }
 
@@ -22,25 +26,21 @@ export class UserService {
    
   }
 
-  create(user: IUser) {
-    return this.http.post("http://localhost:3000" + '/users/register', user, this.jwt());
+  create(user) {
+    return this.http.post("http://localhost:3000" + '/users/v1/add', user);
   }
 
   update(user: IUser) {
-    return this.http.put("http://localhost:3000" + '/users/' + user.id, user, this.jwt());
+    return this.http.put("http://localhost:3000" + '/users/' + user.id, user);
   }
 
   delete(_id: string) {
-    return this.http.delete('http://localhost:3000' + '/users/' + _id, this.jwt());
+    return this.http.delete('http://localhost:3000' + '/users/v1/delete/' + _id);
   }
 
-  // private helper methods
-  private jwt() {
-    // create authorization header with jwt token
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser && currentUser.token) {
-      const headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
-      return new RequestOptions({ headers: headers });
-    }
+  authenticate(user){
+    return this.http.post('http://localhost:3000/users/v1/authenticate', user, this.options);
+
   }
-}
+  
+  }
