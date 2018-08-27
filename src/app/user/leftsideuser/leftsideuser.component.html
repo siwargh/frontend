@@ -1,15 +1,14 @@
 <div class="card  ">
- <img [src]="currentUser.avatar_url" alt="currentUser" style="width:100%">
-  <h1>{{currentUser.username}}</h1>
-  <p class="title">{{currentUser.occupation}}</p>
+ <img [src]="avatar" alt="currentUser" style="width:100%">
+  <h1><strong class="text-primary">{{currentUser.firstname}}</strong> <span><i class="text-info">{{currentUser.lastname}}</i></span></h1>
   <div style="align-content: left">
     <p>
       <i class="fa fa-user-circle-o" aria-hidden="true"></i>" INTRO </p>
     <p>
-      <i class="fa fa-address-book-o" aria-hidden="true"> </i>" étudié a Enicarthage
+      <i class="fa fa-address-book-o" aria-hidden="true"> </i>" {{currentUser.occupation}}
     </p>
     <p>
-      <i class="fa fa-home mr-3"></i> habite a Mahdia </p>
+      <i class="fa fa-home mr-3"></i>{{currentUser.city}} </p>
   </div>
   <p>
 
@@ -18,16 +17,16 @@
     for any contact :
   </p>
   <a href="#">
-    <i class="fa fa-dribbble"></i>
+    <span class="fa fa-dribbble"></span>
   </a>
   <a href="Siwar-Gh">
-    <i class="fa fa-twitter"></i>
+    <span class="fa fa-twitter"></span>
   </a>
   <a href="siwar ghammam">
-    <i class="fa fa-linkedin"></i>
+    <span class="fa fa-linkedin"></span>
   </a>
   <a href="https://www.facebook.com/photo.php?fbid=925245307560626&set=a.374506759301153.90082.100002254966363&type=3">
-    <i class="fa fa-facebook"></i>
+    <span class="fa fa-facebook"></span>
   </a>
 
 </div>

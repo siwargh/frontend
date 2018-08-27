@@ -15,22 +15,22 @@
             <i class="fa fa-user prefix grey-text"></i>
             <input type="text" 
             id="materialFormCardNameEx" 
-            formControlName="materialFormCardNameEx" 
+            formControlName="firstname" 
             class="form-control" 
             mdbInputDirective
-            name="first_name"
-            [(ngModel)]="user.firstname" >
+            name="firstname"
+            [formControl]="firstname" >
             <label for="materialFormCardNameEx" class="font-weight-light">firstname</label>
           </div>
           <div class="md-form">
             <i class="fa fa-user prefix grey-text"></i>
             <input type="text" 
             id="materialFormCardNameEx2" 
-            formControlName="materialFormCardNameEx" 
+            formControlName="lastname" 
             class="form-control" 
             mdbInputDirective
             name="lastname"
-            [(ngModel)]="user.lastname" >
+            [formControl]="lastname" >
             <label for="materialFormCardNameEx" class="font-weight-light">lastname</label>
           </div>
          <!-- <div class="md-form">
@@ -55,10 +55,10 @@
             <i class="fa fa-envelope prefix grey-text"></i>
             <input type="email" 
             id="materialFormCardEmailEx" 
-            formControlName="materialFormCardEmailEx" 
+            formControlName="email" 
             class="form-control" mdbInputDirective
             name="email"
-            [(ngModel)]="user.email" >
+            [formControl]="email" >
             <label for="materialFormCardEmailEx" class="font-weight-light">Your email</label>
           </div>
 
@@ -75,11 +75,11 @@
             <i class="fa fa-lock prefix grey-text"></i>
             <input type="password" 
             id="materialFormCardPasswordEx" 
-            formControlName="materialFormCardPasswordEx" 
+            formControlName="password" 
             class="form-control"
               mdbInputDirective
               name="password"
-              [(ngModel)]="user.password" >
+              [formControl]="password" >
             <label for="materialFormCardPasswordEx" class="font-weight-light">Your password</label>
           </div>
           <!-- 
@@ -99,7 +99,7 @@
           class="waves-light" 
           type="button" 
           mdbWavesEffect
-          (click)="register(user)">Register</button>
+          (click)="register()">Register</button>
         </div>
         <!-- Material form register -->
       </mdb-card-body>
