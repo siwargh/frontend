@@ -14,21 +14,29 @@ import { Router } from '../../../../node_modules/@angular/router';
   styleUrls: ['./inscription.component.scss']
 })
 export class InscriptionComponent implements OnInit {
-  
+    
   private firstname = new FormControl('');
   private lastname = new FormControl('');
   private email = new FormControl('');
   private password = new FormControl('');
-
+  private city = new FormControl('');
+  private occupation= new FormControl('');
+  
   private cardForm = new FormGroup({
     firstname: this.firstname,
     lastname: this.lastname,
     email: this.email,
+    city: this.city,
+    occupation: this.occupation,
     password: this.password
-  }
-  );
+  });
+  errorMessage = 'Custom error message';
+  
+
   constructor(private userService: UserService,
-  private router:Router) { }
+  private router:Router) { 
+    
+  }
 
   ngOnInit() {
   }
@@ -38,6 +46,8 @@ export class InscriptionComponent implements OnInit {
       firstname: this.firstname.value,
       lastname: this.lastname.value,
       email: this.email.value,
+      city: this.city.value,
+      occupation: this.occupation.value,
       password: this.password.value
     };
 

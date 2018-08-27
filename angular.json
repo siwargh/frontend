@@ -52,6 +52,10 @@
               "node_modules/angular-bootstrap-md/scss/mdb-free.scss",
               "src/assets/css/w3s.scss",
               "src/assets/css/theme-grey-blue.scss",
+
+              
+              
+              
               "src/styles.scss"
             ],
             "scripts": [

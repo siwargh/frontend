@@ -7,19 +7,22 @@
     <mdb-card>
       <mdb-card-body>
         <!-- Material form register -->
-        <form [formGroup]="cardForm">
+        <form [formGroup]="cardForm" >
           <p class="h4 text-center py-4" style="color: dodgerblue ;">Create Your Account</p>
 
           <!-- Material input text -->
           <div class="md-form">
             <i class="fa fa-user prefix grey-text"></i>
             <input type="text" 
+          
             id="materialFormCardNameEx" 
             formControlName="firstname" 
             class="form-control" 
+            required
             mdbInputDirective
             name="firstname"
-            [formControl]="firstname" >
+            [formControl]="firstname"
+             >
             <label for="materialFormCardNameEx" class="font-weight-light">firstname</label>
           </div>
           <div class="md-form">
@@ -29,6 +32,7 @@
             formControlName="lastname" 
             class="form-control" 
             mdbInputDirective
+            required
             name="lastname"
             [formControl]="lastname" >
             <label for="materialFormCardNameEx" class="font-weight-light">lastname</label>
@@ -45,19 +49,44 @@
             <label for="materialFormCardConfirmDate" class="font-weight-light">Date</label>
           </div>
         -->
-          <!-- <div class="md-form">
-            <i class="fa fa-address-card-o prefix grey-text" aria-hidden="true"></i>
-            <input type="text" id="materialFormCardADDEx" formControlName="materialFormCardADDEx" class="form-control" mdbInputDirective>
-            <label for="materialFormCardADDEx" class="font-weight-light">Your Adress</label>
-          </div> -->
+           <div class="md-form">
+            <i class="fa fa-address-card-o prefix grey-text"
+            aria-hidden="true"></i>
+            <input type="text" 
+            id="materialFormCardADDEx"
+             formControlName="city" 
+             class="form-control"
+             required 
+             mdbInputDirective
+             name="city"
+             [formControl]="city">
+            <label for="materialFormCardADDEx" class="font-weight-light">Your City</label>
+          </div> 
+          <div class="md-form">
+            <i class="fa fa-address-book-o prefix grey-text"
+            aria-hidden="true"></i>
+            <input type="text" 
+            id="materialFormCardADDEx2"
+             formControlName="occupation" 
+             class="form-control" 
+             required
+             mdbInputDirective
+             name="occupation"
+             [formControl]="occupation">
+            <label for="materialFormCardADDEx2" class="font-weight-light">Your Occupation</label>
+          </div> 
           <!-- Material input email -->
           <div class="md-form">
             <i class="fa fa-envelope prefix grey-text"></i>
             <input type="email" 
             id="materialFormCardEmailEx" 
-            formControlName="email" 
+            formControlName="email"
+            data-error="wrong email"
+            data-success="valid email"
+           required
             class="form-control" mdbInputDirective
             name="email"
+             
             [formControl]="email" >
             <label for="materialFormCardEmailEx" class="font-weight-light">Your email</label>
           </div>
@@ -79,6 +108,7 @@
             class="form-control"
               mdbInputDirective
               name="password"
+              required
               [formControl]="password" >
             <label for="materialFormCardPasswordEx" class="font-weight-light">Your password</label>
           </div>
@@ -90,8 +120,7 @@
             <label for="materialFormCardPasswordEx" class="font-weight-light">Confirm Your password</label>
           </div>
         -->
-
-         
+        
         </form>
 
         <div class="text-center py-4 mt-3">
