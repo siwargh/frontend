@@ -1,0 +1,74 @@
+<div class="w3-theme-l5">
+
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark  default-color lighten-4 ">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" id="a" href="#">
+      <img src="../../../assets/images/customer-review-speech-bubble-rating.png " width="40px" height="40px"> DisDonc </a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a routerLink="/acceuil" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News">
+            <i class="fa fa-globe  fa-2x fa-fw "></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/invitations" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Invitation">
+            <i class="fa fa-user  fa-2x fa-fw"></i>
+          </a>
+
+        </li>
+        <li class="nav-item">
+          <a routerLink="/messages" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages">
+            <i class="fa fa-envelope  fa-2x fa-fw"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/settings" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings">
+            <i class="fa fa-cog  fa-2x fa-fw"></i>
+          </a>
+        </li>
+
+        <!-- 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        Dropdown -->
+
+      </ul>
+
+      
+      <form name="mySearchForm" class="form-inline">
+        <div class="md-form my-0">
+          <input 
+          class="form-control mr-sm-2" 
+          type="text" 
+          placeholder="Search" 
+          aria-label="Search" 
+          name="search" 
+          [formControl]="search">
+        </div>
+      </form>
+    
+    </div>
+    <!-- Collapsible content -->
+
+  </nav>
+  <!--/.Navbar-->
+</div>

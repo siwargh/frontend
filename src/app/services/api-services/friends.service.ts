@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { AppConfig } from '../../app.config';
-import { IfRIEND } from '../../models/index';
+import { IfRIEND } from '../../models';
 import 'rxjs/add/operator/map';
 import { map } from 'rxjs/operators';
 import 'rxjs/add/operator/map';

@@ -16,29 +16,30 @@
             <!--Header-->
             <div class="text-center">
               <h3 class="dark-grey-text mb-5">
-                <strong style="color:blue;">Sign in</strong>
+                <strong class="signin">Sign in</strong>
               </h3>
             </div>
 
             <form [formGroup]="elegantForm">
               <div class="md-form">
-                <input type="text" id="elegantFormEmailEx" 
+                <input type="text" 
+                id="elegantFormEmailEx" 
                 class="form-control" 
-                formControlName="elegantFormEmailEx" 
+                formControlName="useremail" 
                 mdbInputDirective
-                name="user_email"
-                [(ngModel)]="user.email">
+                name="useremail"
+                [formControl]="useremail">
                 <label for="elegantFormEmailEx">Your email</label>
               </div>
 
               <div class="md-form pb-3">
                 <input type="password" 
                 id="elegantFormPasswordEx" 
-                formControlName="elegantFormPasswordEx" 
+                formControlName="userpassword" 
                 class="form-control" 
                 mdbInputDirective
-                name="user.password"
-                [(ngModel)]="user_password">
+                name="userpassword"
+                [formControl]="userpassword">
                 <label for="elegantFormPasswordEx">Your password</label>
                 <p class="font-small blue-text d-flex justify-content-end">Forgot
                   <a href="#" class="blue-text ml-1"> Password?</a>
@@ -52,7 +53,7 @@
               block="true" rounded="true" 
               class="z-depth-1a waves-light"
                mdbWavesEffect 
-               (click)="login(user)">Sign in</button>
+               (click)="login()">Sign in</button>
             </div>
             <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in with:</p>
 
@@ -80,4 +81,5 @@
     </div>
   </div>
 </div>
+{{useremail.value}} <br> {{userpassword.value}}
 <app-footer></app-footer>

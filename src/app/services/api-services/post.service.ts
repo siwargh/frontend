@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { AppConfig } from '../../app.config';
-import {  IPost } from '../../models/index';
+import {  IPost } from '../../models';
 import 'rxjs/add/operator/map';
 import { map } from 'rxjs/operators';
 import 'rxjs/add/operator/map';
