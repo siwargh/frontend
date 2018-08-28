@@ -6,6 +6,7 @@ import { AcceuilPageComponent } from './pages/acceuil-page/acceuil-page.componen
 import { MessagePageComponent } from './pages/message-page/message-page.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { InvitationPageComponent } from './pages/invitation-page/invitation-page.component';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -13,10 +14,10 @@ const routes: Routes = [
 
   {  path: '', component: LoginComponent},
   { path: 'inscription', component: InscriptionComponent },
-  { path: 'acceuil' , component: AcceuilPageComponent},
-  { path: 'messages' , component: MessagePageComponent},
-  { path: 'settings' , component: SettingsComponent},
-  { path: 'invitations' , component: InvitationPageComponent}
+  { path: 'acceuil' , component: AcceuilPageComponent, canActivate:[AuthGuard]},
+  { path: 'messages' , component: MessagePageComponent,canActivate:[AuthGuard]},
+  { path: 'settings' , component: SettingsComponent,canActivate:[AuthGuard]},
+  { path: 'invitations' , component: InvitationPageComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

@@ -22,9 +22,11 @@
 
             <form [formGroup]="elegantForm">
               <div class="md-form">
+                 
                 <input type="text" 
                 id="elegantFormEmailEx" 
                 class="form-control" 
+                required
                 formControlName="useremail" 
                 mdbInputDirective
                 name="useremail"
@@ -33,11 +35,13 @@
               </div>
 
               <div class="md-form pb-3">
+                  
                 <input type="password" 
                 id="elegantFormPasswordEx" 
                 formControlName="userpassword" 
                 class="form-control" 
                 mdbInputDirective
+                required
                 name="userpassword"
                 [formControl]="userpassword">
                 <label for="elegantFormPasswordEx">Your password</label>

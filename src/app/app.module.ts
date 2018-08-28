@@ -21,6 +21,9 @@ import { ReactiveFormsModule, FormControl, FormsModule, FormGroup } from '@angul
 import { PostComponent } from './posts/post/post.component';
 import { CommentComponent } from './posts/comment/comment.component';
 import { RatingComponent } from './posts/rating/rating.component';
+import { UserConnectComponent } from './user-connect/user-connect.component';
+import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
+import { SendInvitationComponent } from './send-invitation/send-invitation.component';
 
 
 
@@ -44,6 +47,9 @@ import { RatingComponent } from './posts/rating/rating.component';
     PostComponent,
     CommentComponent,
     RatingComponent,
+    UserConnectComponent,
+    UpcomingEventsComponent,
+    SendInvitationComponent,
   ],
   imports: [
     ReactiveFormsModule,

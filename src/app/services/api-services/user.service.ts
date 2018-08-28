@@ -17,7 +17,7 @@ export class UserService {
   
 
   getAll() {
-    return this.http.get('http://localhost:3000'+'/users')
+    return this.http.get('http://localhost:3000'+'/users/v1/all')
     .map((response: Response) => response.json());
   }
 

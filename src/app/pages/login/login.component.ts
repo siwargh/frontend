@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { UserService } from '../../services/api-services/user.service';
 import { ActivatedRoute,Router } from '../../../../node_modules/@angular/router';
+import { AlertPromise } from '../../../../node_modules/@types/selenium-webdriver';
 
 @Component({
   selector: 'app-login',
@@ -37,6 +38,8 @@ export class LoginComponent implements OnInit {
            localStorage.setItem('currentUser', JSON.stringify(response.message));
            this.router.navigate(['/acceuil']);
         } else {
+          //TODO : Enhance UX if user not registred
+          alert("User not registred yet  :)")
           this.router.navigate(['/']);
         }
       });
