@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/api-services/user.service';
 import { IUser } from '../models';
 import { InvitationsService } from '../services/api-services/invitations.service';
-import { filter } from 'rxjs/operators';
+import 'rxjs';
 @Component({
   selector: 'app-send-invitation',
   templateUrl: './send-invitation.component.html',
   styleUrls: ['./send-invitation.component.scss']
 })
 export class SendInvitationComponent implements OnInit {
-  private foreigners;
+  private foreigners:any=[];
   private currentUser:IUser;
 
   constructor(
@@ -33,17 +33,10 @@ export class SendInvitationComponent implements OnInit {
   }
 
   send(sender, reciever){
-    let invitation={senderId:sender,reciverId:reciever};
+    let invitation={senderId:sender,recieverId:reciever};
     this.inviservice.sendInvitation(invitation)
     .subscribe(response => console.log(response));
-
-
-    this.filerSendedUser(reciever);
+    this.foreigners = this.foreigners.filter(user => user._id !== reciever);
   }
-
-
-  filerSendedUser(reciever){
-      this.foreigners.fiter(u=> u._id===reciever);
-  };
 
 }
