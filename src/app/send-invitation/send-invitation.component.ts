@@ -14,10 +14,11 @@ export class SendInvitationComponent implements OnInit {
   constructor(private userService:UserService) { }
 
   ngOnInit() {
-    this.currentUser=JSON.parse(localStorage.getItem("currentUser"));
+    this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
     this.userService.getAll().subscribe(
       data =>{
         this.foreigners=data;
+        console.log(this.foreigners);
       } );
   }
 

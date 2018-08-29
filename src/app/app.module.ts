@@ -12,7 +12,6 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { HeaderComponent } from './common/header/header.component';
-import { CommonServicesComponent } from './services/common-services/common-services.component';
 import { RightContainerComponent } from './right-container/right-container.component';
 import { UserBadgeComponent } from './user/user-badge/user-badge.component';
 import { LeftsideUserComponent } from './user/leftsideuser/leftsideuser.component';
@@ -39,8 +38,6 @@ import { SendInvitationComponent } from './send-invitation/send-invitation.compo
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
-    
-    CommonServicesComponent,
     RightContainerComponent,
     LeftsideUserComponent,
     UserBadgeComponent,
