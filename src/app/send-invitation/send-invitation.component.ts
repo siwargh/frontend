@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/api-services/user.service';
 import { IUser } from '../models';
-
+import { InvitationsService } from '../services/api-services/invitations.service';
+import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-send-invitation',
   templateUrl: './send-invitation.component.html',
@@ -11,7 +12,9 @@ export class SendInvitationComponent implements OnInit {
   private foreigners;
   private currentUser:IUser;
 
-  constructor(private userService:UserService) { }
+  constructor(
+    private userService:UserService, 
+    private inviservice: InvitationsService) { }
 
   ngOnInit() {
     this.currentUser=JSON.parse(localStorage.getItem("currentUser"));
@@ -29,9 +32,18 @@ export class SendInvitationComponent implements OnInit {
     }
   }
 
-  send(foreigner){
-    alert("user_id"+this.currentUser.id+"  c foreiner : "+foreigner.id);
+  send(sender, reciever){
+    let invitation={senderId:sender,reciverId:reciever};
+    this.inviservice.sendInvitation(invitation)
+    .subscribe(response => console.log(response));
 
+
+    this.filerSendedUser(reciever);
   }
+
+
+  filerSendedUser(reciever){
+      this.foreigners.fiter(u=> u._id===reciever);
+  };
 
 }

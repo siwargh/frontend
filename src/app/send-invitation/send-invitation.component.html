@@ -1,5 +1,5 @@
-<div class="w3-container">
-  <div *ngFor="let foreigner of foreigners;let i=index">
+<div class="w3-container"  >
+  <div *ngFor="let foreigner of foreigners;let i=index" >
   <img [src]="getAvatar(foreigner)" class="w3-circle" alt="Avatar" style="width:33px; padding:3px auto !important" style="height:33px">
   <span>
     {{foreigner.firstname}} {{foreigner.lastname}}
@@ -7,8 +7,8 @@
   <button 
     class="w3-button w3-block w3-green w3-section" 
     title="Accept" 
-    (click)="send(foreigner)">
-    <i class="fa fa-user"> send :)</i>
+    (click)="send(currentUser._id,foreigner._id)">
+    <i class="fa fa-user" > send :)</i>
   </button>
 </div>
 </div>
