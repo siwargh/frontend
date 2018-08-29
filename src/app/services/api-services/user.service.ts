@@ -42,5 +42,5 @@ export class UserService {
     return this.http.post('http://localhost:3000/users/v1/authenticate', user, this.options);
 
   }
-  
+ 
   }
