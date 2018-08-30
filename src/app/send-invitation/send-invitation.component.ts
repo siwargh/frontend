@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/api-services/user.service';
 import { IUser } from '../models';
+const avatarsFolder = 'http://localhost:3000/uploads/avatars/';
 import { InvitationsService } from '../services/api-services/invitations.service';
 import 'rxjs';
 @Component({
@@ -9,28 +10,29 @@ import 'rxjs';
   styleUrls: ['./send-invitation.component.scss']
 })
 export class SendInvitationComponent implements OnInit {
+
   private foreigners:any=[];
   private currentUser:IUser;
 
-  constructor(
-    private userService:UserService, 
-    private inviservice: InvitationsService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.currentUser=JSON.parse(localStorage.getItem("currentUser"));
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.userService.getAll().subscribe(
-      data =>{
-        this.foreigners=data;
+      data => {
+        this.foreigners = data;
+        console.log(this.foreigners);
       } );
   }
 
-  getAvatar(user){
-    if(user.avatar_url){
-      return user.avatar_url;
-    }else{
-      return "/assets/images/default-avatar.jpg";
+  getAvatar(user) {
+    if ( user.avatar_url) {
+      return avatarsFolder + user.avatar_url;
+    } else {
+      return '/assets/images/default-avatar.jpg';
     }
   }
+
 
   send(sender, reciever){
     let invitation={senderId:sender,recieverId:reciever};

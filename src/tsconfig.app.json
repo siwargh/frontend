@@ -8,5 +8,9 @@
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
+  ],
+  "include": [
+    "../src/**/*",
+    "../node_modules/ngx-uploader/src/**/*"
   ]
 }

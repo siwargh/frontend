@@ -3,9 +3,9 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { AppConfig } from '../../app.config';
 import {  IPost } from '../../models';
-import 'rxjs/add/operator/map';
+
 import { map } from 'rxjs/operators';
-import 'rxjs/add/operator/map';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +16,12 @@ export class PostService {
   
 
   getAll() {
-    return this.http.get('http://localhost:3000' + '/posts', this.jwt())
-    .map((response: Response) => response.json());
+    return this.http.get('http://localhost:3000' + '/posts', this.jwt()).pipe(
+    map((response: Response) => response.json()));
   }
 
   getById(_id: string) {
-    return this.http.get('http://localhost:3000' + '/posts' + _id, this.jwt()).map((response: Response) => response.json());
+    return this.http.get('http://localhost:3000' + '/posts' + _id, this.jwt()).pipe(map((response: Response) => response.json()));
   }
 
   create(post: IPost) {

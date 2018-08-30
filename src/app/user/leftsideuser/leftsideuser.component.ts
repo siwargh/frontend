@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/api-services/user.service';
 import { IUser } from '../../models';
-const defaultAvatar = "/assets/images/default-avatar.jpg";
+
+const defaultAvatar = '/assets/images/default-avatar.jpg';
+const avatarsFolder = 'http://localhost:3000/uploads/avatars/';
 @Component({
   selector: 'app-leftsideuser',
   templateUrl: './leftsideuser.component.html',
@@ -14,11 +16,10 @@ export class LeftsideUserComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (this.currentUser.avatar_url) {
-      this.avatar = this.currentUser.avatar_url
-    }
-    else {
+      this.avatar = avatarsFolder + this.currentUser.avatar_url;
+    } else {
       this.avatar = defaultAvatar;
     }
   }

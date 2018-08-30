@@ -12,7 +12,6 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { HeaderComponent } from './common/header/header.component';
-import { CommonServicesComponent } from './services/common-services/common-services.component';
 import { RightContainerComponent } from './right-container/right-container.component';
 import { UserBadgeComponent } from './user/user-badge/user-badge.component';
 import { LeftsideUserComponent } from './user/leftsideuser/leftsideuser.component';
@@ -24,10 +23,10 @@ import { RatingComponent } from './posts/rating/rating.component';
 import { UserConnectComponent } from './user-connect/user-connect.component';
 import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
 import { SendInvitationComponent } from './send-invitation/send-invitation.component';
+import { UploadAvatarComponent } from './upload-avatar/upload-avatar.component';
 import { SendingInviComponent } from './sending-invi/sending-invi.component';
 import { ReceivingInviComponent } from './receiving-invi/receiving-invi.component';
-
-
+import {NgUploaderModule} from 'ngx-uploader';
 
 @NgModule({
   declarations: [
@@ -41,8 +40,6 @@ import { ReceivingInviComponent } from './receiving-invi/receiving-invi.componen
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
-    
-    CommonServicesComponent,
     RightContainerComponent,
     LeftsideUserComponent,
     UserBadgeComponent,
@@ -52,8 +49,9 @@ import { ReceivingInviComponent } from './receiving-invi/receiving-invi.componen
     UserConnectComponent,
     UpcomingEventsComponent,
     SendInvitationComponent,
+    UploadAvatarComponent,
     SendingInviComponent,
-    ReceivingInviComponent,
+    ReceivingInviComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -61,8 +59,8 @@ import { ReceivingInviComponent } from './receiving-invi/receiving-invi.componen
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot()
-  
+    MDBBootstrapModule.forRoot(),
+    NgUploaderModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],
