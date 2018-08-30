@@ -13,7 +13,7 @@
       <div class="col-md-8 mx-auto my-8" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
 
         <div class="w3-container" *ngFor="let invitation of invitationsIn let i=index">
-            <app-sender-user [userId]="invitation.senderId"></app-sender-user>
+            <app-sender-user [inv]="invitation"></app-sender-user>
         </div>
         <hr>
 

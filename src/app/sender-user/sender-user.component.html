@@ -1,7 +1,4 @@
 <img [src]="getAvatar(_user.id)" class="w3-circle" alt="Avatar" style="width:60px" style="height:60px">
-
-
-
     <span class="titre"><b>{{getFullName()}}</b></span>  
     <pre>
     <span class="titre">{{_user.occupation}}</span>  
@@ -9,12 +6,18 @@
 </pre>
 <div class="w2-row w2-opacity">
   <div class="w3-half">
-    <button class="w3-button w3-block w3-green w3-section" title="Accept" (click)="acceptInvitation(invitation.senderId)">
+    <button 
+      class="w3-button w3-block w3-green w3-section" 
+      title="Accept" 
+      (click)="acceptInvitation(inv)">
       <i class="fa fa-check"></i>
     </button>
   </div>
   <div class="w3-half">
-    <button class="w3-button w3-block w3-red w3-section" title="Decline">
+    <button 
+    class="w3-button w3-block w3-red w3-section" 
+    title="Decline"
+    (click)="declineInvitation(invitation)">
       <i class="fa fa-remove"></i>
     </button>
   </div>

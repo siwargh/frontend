@@ -30,4 +30,8 @@ export class InvitationsService {
       map((response: Response) => response.json()));
 
   }
+
+  acceptInvitation(invitation){
+    return this.http.put('http://localhost:3000/invitations/v1/invitations/accept',invitation);
+  }
 }

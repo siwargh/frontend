@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../services/api-services/user.service';
 import { IUser } from '../models';
+import { InvitationsService } from '../services/api-services/invitations.service';
 
 const avatarsFolder="http://localhost:3000/uploads/avatars/";
 const defaultAvatar="assets/images/default-avatar.jpg";
@@ -11,13 +12,15 @@ const defaultAvatar="assets/images/default-avatar.jpg";
   styleUrls: ['./sender-user.component.scss']
 })
 export class SenderUserComponent implements OnInit {
-  @Input() userId:string;
+  @Input('inv') inv:any;
   private _user:IUser=new IUser();
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,
+  private invitationService:InvitationsService) { }
 
   ngOnInit() {
-    this.getSenderById(this.userId);
+    console.log(this.inv);
+    this.getSenderById(this.inv.senderId);
   }
 
   getSenderById(id){
@@ -35,5 +38,15 @@ export class SenderUserComponent implements OnInit {
 
   getFullName(){
     return "  "+this._user.firstname+" "+this._user.lastname;
+  }
+
+  acceptInvitation(invitation){
+      console.log(invitation);
+      this.invitationService.acceptInvitation(invitation)
+      .subscribe(data=>console.log(data));
+  }
+
+  rejectInvitation(){
+      alert("Reject Invitation Triggred");
   }
 }

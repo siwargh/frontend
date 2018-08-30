@@ -12,7 +12,7 @@ import 'rxjs';
 export class SendInvitationComponent implements OnInit {
 
   private foreigners:any=[];
-  private currentUser:IUser;
+  private currentUser:any;
 
   constructor(private userService: UserService ,  private inviservice: InvitationsService) { }
 
@@ -21,7 +21,7 @@ export class SendInvitationComponent implements OnInit {
     this.userService.getAll().subscribe(
       data => {
         this.foreigners = data;
-        this.foreigners.splice(0,1,this.foreigners.indexOf(this.currentUser));
+        this.foreigners=this.foreigners.filter(elm=> elm._id !== this.currentUser._id);
         console.log(this.foreigners);
       } );
   }
