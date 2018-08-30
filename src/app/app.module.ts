@@ -27,6 +27,7 @@ import { UploadAvatarComponent } from './upload-avatar/upload-avatar.component';
 import { SendingInviComponent } from './sending-invi/sending-invi.component';
 import { ReceivingInviComponent } from './receiving-invi/receiving-invi.component';
 import {NgUploaderModule} from 'ngx-uploader';
+import { SenderUserComponent } from './sender-user/sender-user.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {NgUploaderModule} from 'ngx-uploader';
     SendInvitationComponent,
     UploadAvatarComponent,
     SendingInviComponent,
-    ReceivingInviComponent
+    ReceivingInviComponent,
+    SenderUserComponent
   ],
   imports: [
     ReactiveFormsModule,

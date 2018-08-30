@@ -14,13 +14,14 @@ export class SendInvitationComponent implements OnInit {
   private foreigners:any=[];
   private currentUser:IUser;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService ,  private inviservice: InvitationsService) { }
 
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.userService.getAll().subscribe(
       data => {
         this.foreigners = data;
+        this.foreigners.splice(0,1,this.foreigners.indexOf(this.currentUser));
         console.log(this.foreigners);
       } );
   }

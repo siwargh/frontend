@@ -21,8 +21,8 @@ export class UserService {
     map((response: Response) => response.json()));
   }
 
-  getById(_id: string) {
-    return this.http.get("http://localhost:3000" + '/users/' + _id);
+  getById(id: string) {
+    return this.http.get('http://localhost:3000/users/v1/' + id);
    
   }
 
