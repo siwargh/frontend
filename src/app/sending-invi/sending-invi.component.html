@@ -1,0 +1,46 @@
+<div class="row">
+
+
+  <div class="col-md-3 mx-auto my-3" id="a"></div>
+  <br>
+    
+  <div class="col-md-9 mx-auto my-9 w3-white">
+    <p >Connaissez-vous...</p>
+    <div class="row" >
+
+      
+      <div class="col-md-9 mx-auto my-9" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)" class="scroll">
+        <div class="w3-container" *ngFor="let foreigner of foreigners;let i=index">
+
+          <img [src]="getAvatar(foreigner)"
+            class="w3-circle" alt="Avatar" style="width:60px" style="height:60px">
+          <span>{{foreigner.firstname}} {{foreigner.lastname}}</span>
+          <div class="w2-row w2-opacity">
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-green w3-section" title="Accept" (click)="send(currentUser._id,foreigner._id)">
+                <i class="fa fa-user-circle-o">Ajouter</i>
+              </button>
+            </div>
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-red w3-section" title="Decline" (click)="supprimer(foreigner._id)">
+                <i class="fa fa-remove">Supprimer</i>
+              </button>
+            </div>
+
+          </div>
+        </div>
+        <hr>
+       
+          
+      </div>
+
+
+      <div class="col-md-3 mx-auto my-3 w3-white"></div>
+
+
+
+    </div>
+
+  </div>
+ 
+</div>

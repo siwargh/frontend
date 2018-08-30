@@ -24,6 +24,8 @@ import { RatingComponent } from './posts/rating/rating.component';
 import { UserConnectComponent } from './user-connect/user-connect.component';
 import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
 import { SendInvitationComponent } from './send-invitation/send-invitation.component';
+import { SendingInviComponent } from './sending-invi/sending-invi.component';
+import { ReceivingInviComponent } from './receiving-invi/receiving-invi.component';
 
 
 
@@ -50,6 +52,8 @@ import { SendInvitationComponent } from './send-invitation/send-invitation.compo
     UserConnectComponent,
     UpcomingEventsComponent,
     SendInvitationComponent,
+    SendingInviComponent,
+    ReceivingInviComponent,
   ],
   imports: [
     ReactiveFormsModule,
