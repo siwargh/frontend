@@ -24,7 +24,8 @@ import { UserConnectComponent } from './user-connect/user-connect.component';
 import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
 import { SendInvitationComponent } from './send-invitation/send-invitation.component';
 import { UploadAvatarComponent } from './upload-avatar/upload-avatar.component';
-
+import { SendingInviComponent } from './sending-invi/sending-invi.component';
+import { ReceivingInviComponent } from './receiving-invi/receiving-invi.component';
 import {NgUploaderModule} from 'ngx-uploader';
 
 @NgModule({
@@ -49,6 +50,8 @@ import {NgUploaderModule} from 'ngx-uploader';
     UpcomingEventsComponent,
     SendInvitationComponent,
     UploadAvatarComponent,
+    SendingInviComponent,
+    ReceivingInviComponent
   ],
   imports: [
     ReactiveFormsModule,
