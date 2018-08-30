@@ -23,8 +23,9 @@ import { RatingComponent } from './posts/rating/rating.component';
 import { UserConnectComponent } from './user-connect/user-connect.component';
 import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
 import { SendInvitationComponent } from './send-invitation/send-invitation.component';
+import { UploadAvatarComponent } from './upload-avatar/upload-avatar.component';
 
-
+import {NgUploaderModule} from 'ngx-uploader';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { SendInvitationComponent } from './send-invitation/send-invitation.compo
     UserConnectComponent,
     UpcomingEventsComponent,
     SendInvitationComponent,
+    UploadAvatarComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -54,8 +56,8 @@ import { SendInvitationComponent } from './send-invitation/send-invitation.compo
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot()
-  
+    MDBBootstrapModule.forRoot(),
+    NgUploaderModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/api-services/user.service';
 import { IUser } from '../models';
-import { InvitationsService } from '../services/api-services/invitations.service';
-import { filter } from 'rxjs/operators';
+
+const avatarsFolder = 'http://localhost:3000/uploads/avatars/';
+
 @Component({
   selector: 'app-send-invitation',
   templateUrl: './send-invitation.component.html',
@@ -10,41 +11,30 @@ import { filter } from 'rxjs/operators';
 })
 export class SendInvitationComponent implements OnInit {
   private foreigners;
-  private currentUser:IUser;
+  private currentUser: IUser;
 
-  constructor(
-    private userService:UserService, 
-    private inviservice: InvitationsService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.userService.getAll().subscribe(
-      data =>{
-        this.foreigners=data;
+      data => {
+        this.foreigners = data;
         console.log(this.foreigners);
       } );
   }
 
-  getAvatar(user){
-    if(user.avatar_url){
-      return user.avatar_url;
-    }else{
-      return "/assets/images/default-avatar.jpg";
+  getAvatar(user) {
+    if ( user.avatar_url) {
+      return avatarsFolder + user.avatar_url;
+    } else {
+      return '/assets/images/default-avatar.jpg';
     }
   }
 
-  send(sender, reciever){
-    let invitation={senderId:sender,reciverId:reciever};
-    this.inviservice.sendInvitation(invitation)
-    .subscribe(response => console.log(response));
+  send(foreigner) {
+    alert('user_id' + this.currentUser.id + '  c foreiner : ' + foreigner.id);
 
-
-    this.filerSendedUser(reciever);
   }
-
-
-  filerSendedUser(reciever){
-      this.foreigners.fiter(u=> u._id===reciever);
-  };
 
 }

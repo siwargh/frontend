@@ -4,9 +4,9 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { AppConfig } from '../../app.config';
 import {  ICOMMENT } from '../../models';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
+
 import { map } from 'rxjs/operators';
-import 'rxjs/add/operator/map';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,12 +17,12 @@ export class CommentsService {
   
 
   getAll() {
-    return this.http.get(this.config.apiUrl + '/comments', this.jwt())
-    .map((response: Response) => response.json());
+    return this.http.get(this.config.apiUrl + '/comments', this.jwt()).pipe(
+    map((response: Response) => response.json()));
   }
 
   getById(_id: string) {
-    return this.http.get(this.config.apiUrl + '/comments/current/' + _id, this.jwt()).map((response: Response) => response.json());
+    return this.http.get(this.config.apiUrl + '/comments/current/' + _id, this.jwt()).pipe(map((response: Response) => response.json()));
   }
 
   create(comments: ICOMMENT) {

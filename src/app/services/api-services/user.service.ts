@@ -5,7 +5,7 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { AppConfig } from '../../app.config';
 import { IUser } from '../../models';
 import { map } from 'rxjs/operators';
-import 'rxjs/add/operator/map';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +17,8 @@ export class UserService {
   
 
   getAll() {
-    return this.http.get('http://localhost:3000'+'/users/v1/all')
-    .map((response: Response) => response.json());
+    return this.http.get('http://localhost:3000'+'/users/v1/all').pipe(
+    map((response: Response) => response.json()));
   }
 
   getById(_id: string) {
