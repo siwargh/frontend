@@ -17,5 +17,5 @@ export class InvitationsService {
 
   sendInvitation(invitation): Observable<any> {
     return this.http.post('http://localhost:3000/invitations/v1/add', invitation);
-  } 
+  }
 }

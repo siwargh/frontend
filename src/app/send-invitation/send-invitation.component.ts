@@ -11,10 +11,11 @@ import 'rxjs';
 })
 export class SendInvitationComponent implements OnInit {
 
-  private foreigners:any=[];
-  private currentUser:IUser;
+  private foreigners: any = [];
+  private currentUser: IUser;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+  private inviservice: InvitationsService) { }
 
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -34,8 +35,8 @@ export class SendInvitationComponent implements OnInit {
   }
 
 
-  send(sender, reciever){
-    let invitation={senderId:sender,recieverId:reciever};
+  send(sender, reciever) {
+    const invitation = {senderId: sender, recieverId: reciever};
     this.inviservice.sendInvitation(invitation)
     .subscribe(response => console.log(response));
     this.foreigners = this.foreigners.filter(user => user._id !== reciever);
