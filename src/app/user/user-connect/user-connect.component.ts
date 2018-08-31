@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from '../models';
-import { Router } from '../../../node_modules/@angular/router';
+import { IUser } from '../../models';
+import { Router } from '@angular/router';
 
 const avatarsFolder = 'http://localhost:3000/uploads/avatars/';
 

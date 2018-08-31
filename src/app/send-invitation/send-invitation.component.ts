@@ -12,16 +12,16 @@ import 'rxjs';
 export class SendInvitationComponent implements OnInit {
 
   private foreigners: any = [];
-  private currentUser: IUser;
+  private currentUser: any;
 
-  constructor(private userService: UserService,
-  private inviservice: InvitationsService) { }
+  constructor(private userService: UserService ,  private inviservice: InvitationsService) { }
 
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.userService.getAll().subscribe(
       data => {
         this.foreigners = data;
+        this.foreigners = this.foreigners.filter(elm => elm._id !== this.currentUser._id);
         console.log(this.foreigners);
       } );
   }

@@ -20,13 +20,15 @@ import { ReactiveFormsModule, FormControl, FormsModule, FormGroup } from '@angul
 import { PostComponent } from './posts/post/post.component';
 import { CommentComponent } from './posts/comment/comment.component';
 import { RatingComponent } from './posts/rating/rating.component';
-import { UserConnectComponent } from './user-connect/user-connect.component';
+import { UserConnectComponent } from './user/user-connect/user-connect.component';
 import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
 import { SendInvitationComponent } from './send-invitation/send-invitation.component';
 import { UploadAvatarComponent } from './upload-avatar/upload-avatar.component';
 import { SendingInviComponent } from './sending-invi/sending-invi.component';
 import { ReceivingInviComponent } from './receiving-invi/receiving-invi.component';
 import {NgUploaderModule} from 'ngx-uploader';
+import { SenderUserComponent } from './sender-user/sender-user.component';
+import { FeriendsListComponent } from './user/feriends-list/feriends-list.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import {NgUploaderModule} from 'ngx-uploader';
     SendInvitationComponent,
     UploadAvatarComponent,
     SendingInviComponent,
-    ReceivingInviComponent
+    ReceivingInviComponent,
+    SenderUserComponent,
+    FeriendsListComponent
   ],
   imports: [
     ReactiveFormsModule,
