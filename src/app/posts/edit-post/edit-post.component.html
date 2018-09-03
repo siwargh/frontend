@@ -1,0 +1,81 @@
+<div class="form-group">
+  <input type="text" 
+  id="categorie" 
+  class="form-control"
+  name="categorie"
+  [(ngModel)]="categorie">
+  <label for="categorie">Categorie</label>
+</div>
+<hr>
+<ckeditor 
+  [(ngModel)]="ckeditorContent" 
+  name="ckeditorContent" 
+  [config]="{uiColor: '#808080'}" 
+  [readonly]="false"
+  (change)="onChange($event)" (editorChange)="onEditorChange($event)" (ready)="onReady($event)" (focus)="onFocus($event)"
+  (blur)="onBlur($event)" (contentDom)="onContentDom($event)" (fileUploadRequest)="onFileUploadRequest($event)"
+  (fileUploadResponse)="onFileUploadResponse($event)" (paste)="onPaste($event)" (drop)="onDrop($event)" debounce="500">
+</ckeditor>
+<hr>
+
+<form class="text-center" style="color: #757575;">
+  <div class="form-group">
+    <input type="text" id="materialFormAdress1" 
+    class="form-control" 
+    name="adress1"
+    [(ngModel)]="adress1">
+
+    <label for="materialLoginFormEmail">Adress I</label>
+  </div>
+  <div class="form-group">
+    <input 
+      type="text" 
+      id="materialFormAdress2" 
+      class="form-control"
+      name="adress2"
+      [(ngModel)]="adress2">
+    <label for="materialLoginFormAdress2">Adress II</label>
+  </div>
+  <div class="form-group">
+    <input 
+          type="text" 
+          id="materialCity" 
+          class="form-control"
+          name="city"
+          [(ngModel)]="city">
+    <label for="materialCity">City</label>
+  </div>
+  <div class="form-group">
+    <input 
+        type="text" 
+        id="materialZipCode" 
+        class="form-control"
+        name="zipcode"
+        [(ngModel)]="zipcode">
+    <label for="materialZipCode">Zip Code</label>
+  </div>
+  <hr>
+  <h3>Geopostion</h3>
+  <div class="form-group">
+    <input 
+        type="text" 
+        id="longitude" 
+        class="form-control"
+        name="longitude"
+        [(ngModel)]="longitude">
+    <label for="longitude">Longitude</label>
+  </div>
+  <div class="form-group">
+    <input 
+          type="text" 
+          id="latitude" 
+          class="form-control"
+          name="latitude"
+          [(ngModel)]="latitude"
+    >
+    <label for="latitude">Latitude</label>
+  </div>
+</form>
+
+
+<a class="btn btn-primary" (click)=save()>Save</a>

@@ -29,7 +29,12 @@ import { ReceivingInviComponent } from './receiving-invi/receiving-invi.componen
 import {NgUploaderModule} from 'ngx-uploader';
 import { SenderUserComponent } from './sender-user/sender-user.component';
 import { FeriendsListComponent } from './user/feriends-list/feriends-list.component';
-
+import { EditPostComponent } from './posts/edit-post/edit-post.component';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { FavoritePlaceMapComponent } from './pages/acceuil-page/favorite-place-map/favorite-place-map.component';
+import { AgmCoreModule } from '@agm/core';
+import { PostService } from './services/api-services/post.service';
+import { AppConfig } from './app.config';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +60,9 @@ import { FeriendsListComponent } from './user/feriends-list/feriends-list.compon
     SendingInviComponent,
     ReceivingInviComponent,
     SenderUserComponent,
-    FeriendsListComponent
+    FeriendsListComponent,
+    EditPostComponent,
+    FavoritePlaceMapComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -64,10 +71,14 @@ import { FeriendsListComponent } from './user/feriends-list/feriends-list.compon
     HttpModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    NgUploaderModule
+    NgUploaderModule,
+    CKEditorModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCkC7tfU7yfLjo119IttdtZ-FLXJMLK8rU'
+    })
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [],
+  providers: [AppConfig, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

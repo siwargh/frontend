@@ -4050,6 +4050,10 @@ next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
+ng2-ckeditor@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/ng2-ckeditor/-/ng2-ckeditor-1.2.1.tgz#473c7a6339cea688bd69bde6d335e92b7c0ea57f"
+
 ngx-uploader@^2.2.8:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/ngx-uploader/-/ngx-uploader-2.2.8.tgz#a6063781e89915bf4a217f56bd3b8c375b59fb79"

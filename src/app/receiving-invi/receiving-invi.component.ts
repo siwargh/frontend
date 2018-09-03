@@ -19,7 +19,7 @@ export class ReceivingInviComponent implements OnInit {
 
   onAcceptInvitation(event) {
       // console.log('this ivent captured onAcceptInvitation : ', event);
-      let invitation = event;
+      const invitation = event;
       this.invitationsIn = this.invitationsIn.filter(inv => inv._id !== invitation._id);
   }
 

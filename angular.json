@@ -63,6 +63,7 @@
               "node_modules/hammerjs/hammer.min.js",
               "node_modules/jquery/dist/jquery.js",
               "node_modules/bootstrap/dist/js/bootstrap.js"
+
             ]
           },
           "configurations": {
@@ -115,7 +116,14 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*", 
+                "input": "../node_modules/ckeditor/", 
+                "output": "assets/js/ckeditor/",
+                "allowOutsideOutDir": true
+                
+             }
             ]
           }
         },
