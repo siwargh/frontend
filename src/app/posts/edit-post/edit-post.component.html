@@ -3,8 +3,9 @@
   id="categorie" 
   class="form-control"
   name="categorie"
-  [(ngModel)]="categorie">
-  <label for="categorie">Categorie</label>
+  [(ngModel)]="categorie"
+  placeholder="Category">
+ 
 </div>
 <hr>
 <ckeditor 
@@ -23,9 +24,9 @@
     <input type="text" id="materialFormAdress1" 
     class="form-control" 
     name="adress1"
-    [(ngModel)]="adress1">
+    [(ngModel)]="adress1"
+    placeholder="Adress I">
 
-    <label for="materialLoginFormEmail">Adress I</label>
   </div>
   <div class="form-group">
     <input 
@@ -33,8 +34,9 @@
       id="materialFormAdress2" 
       class="form-control"
       name="adress2"
-      [(ngModel)]="adress2">
-    <label for="materialLoginFormAdress2">Adress II</label>
+      [(ngModel)]="adress2"
+      placeholder="Adress II">
+   
   </div>
   <div class="form-group">
     <input 
@@ -42,8 +44,9 @@
           id="materialCity" 
           class="form-control"
           name="city"
-          [(ngModel)]="city">
-    <label for="materialCity">City</label>
+          [(ngModel)]="city"
+          placeholder="City">
+   
   </div>
   <div class="form-group">
     <input 
@@ -51,8 +54,9 @@
         id="materialZipCode" 
         class="form-control"
         name="zipcode"
-        [(ngModel)]="zipcode">
-    <label for="materialZipCode">Zip Code</label>
+        [(ngModel)]="zipcode"
+        placeholder="Zip Code">
+   
   </div>
   <hr>
   <h3>Geopostion</h3>
@@ -62,8 +66,9 @@
         id="longitude" 
         class="form-control"
         name="longitude"
-        [(ngModel)]="longitude">
-    <label for="longitude">Longitude</label>
+        [(ngModel)]="longitude"
+        placeholder="Longitude">
+   
   </div>
   <div class="form-group">
     <input 
@@ -72,8 +77,9 @@
           class="form-control"
           name="latitude"
           [(ngModel)]="latitude"
+          placeholder="Latitude"
     >
-    <label for="latitude">Latitude</label>
+  
   </div>
 </form>
 

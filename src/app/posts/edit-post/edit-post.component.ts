@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PostService } from '../../services/api-services/post.service';
+import { Router } from '@angular/router';
+import { AlertPromise } from 'selenium-webdriver';
 
 
 
@@ -19,9 +21,10 @@ export class EditPostComponent implements OnInit {
   private ckeditorContent: any;
 
  private cureentUser = JSON.parse(localStorage.getItem('currentUser'));
- 
- constructor(private postService: PostService) { }
- 
+
+ constructor(private postService: PostService,
+  private router: Router) { }
+
   ngOnInit() {
 
   }
@@ -58,6 +61,8 @@ export class EditPostComponent implements OnInit {
 
 
     this.postService.create(post).subscribe(data => console.log(data));
+    alert('Post Added succeffully :)');
+    this.router.navigate(['/']);
   }
 }
 

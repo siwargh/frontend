@@ -10,6 +10,7 @@ import { AlertPromise } from '../../../../node_modules/@types/selenium-webdriver
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
   private useremail = new FormControl('');
   private userpassword = new FormControl('');
   private elegantForm: FormGroup = new FormGroup(
@@ -48,6 +49,9 @@ export class LoginComponent implements OnInit {
 
 
     ngOnInit() {
+      if(localStorage.getItem('currentUser')) {
+          this.router.navigate(['/acceuil']);
+      }
   }
 
   
