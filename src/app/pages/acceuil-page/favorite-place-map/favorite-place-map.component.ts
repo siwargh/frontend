@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MarkerTypeId, IMapOptions } from 'angular-maps';
 
 @Component({
   selector: 'app-favorite-place-map',
@@ -7,12 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritePlaceMapComponent implements OnInit {
 
-  title = 'Stade Rejich';
-  lat = 35.470749;
-  lng = 11.0479372;
+  @Input()title = 'Stade Rejich';
+  @Input()latitude = 35.470749;
+  @Input()longitude = 11.0479372;
+  private _markerTypeId = MarkerTypeId;
+
+  private _options: IMapOptions = {
+    disableBirdseye: false,
+    disableStreetside: false,
+    navigationBarMode: 1
+  };
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getLatitude() {
+    return this.latitude.toString();
+  }
+  getLongitude(){
+    return this.longitude.toString();
+  }
+
+
+  private _click() {
+    alert('hello world...');
   }
 
 }

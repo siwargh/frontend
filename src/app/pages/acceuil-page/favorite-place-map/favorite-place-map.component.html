@@ -1,5 +1,21 @@
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map  [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
+<div style="height: 303px">
+  <x-map #xmap [Options]="_options">
+      <x-map-marker
+          [Latitude]="getLatitude()"
+          [Longitude]="getLongitude()" 
+          [Title]="title" 
+          [IconUrl]="'assets/images/icon_user_map.png'" 
+          [IconInfo]="{
+              markerType: _markerTypeId.FontMarker,
+              fontName: 'FontAwesome',
+              fontSize: 23,
+              color: 'red',
+              markerOffsetRatio: { x: 0.5, y: 0.5 },
+              text: '\uF276'
+          }"> 
+          <info-box [DisableAutoPan]="true" [Title]="'My InfoBox'" [Description]="'Hi, this is the content of the <strong>info window</strong>. It is your responsibility to implement functionality such as close, etc...'">
+              <info-box-action [Label]="'Click Me'" (ActionClicked)="_click()"></info-box-action>
+          </info-box>   
+      </x-map-marker>
+  </x-map>
+</div>

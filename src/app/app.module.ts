@@ -1,3 +1,6 @@
+/// <reference path="../../node_modules/bingmaps/types/MicrosoftMaps/Microsoft.Maps.All.d.ts" />
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -16,7 +19,7 @@ import { RightContainerComponent } from './right-container/right-container.compo
 import { UserBadgeComponent } from './user/user-badge/user-badge.component';
 import { LeftsideUserComponent } from './user/leftsideuser/leftsideuser.component';
 import { HttpModule } from '@angular/http';
-import { ReactiveFormsModule, FormControl, FormsModule, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PostComponent } from './posts/post/post.component';
 import { CommentComponent } from './posts/comment/comment.component';
 import { RatingComponent } from './posts/rating/rating.component';
@@ -32,9 +35,14 @@ import { FeriendsListComponent } from './user/feriends-list/feriends-list.compon
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { FavoritePlaceMapComponent } from './pages/acceuil-page/favorite-place-map/favorite-place-map.component';
-import { AgmCoreModule } from '@agm/core';
 import { PostService } from './services/api-services/post.service';
 import { AppConfig } from './app.config';
+
+import { MapModule, MapAPILoader, 
+  BingMapAPILoaderConfig, BingMapAPILoader, 
+  WindowRef, DocumentRef, 
+  MapServiceFactory, BingMapServiceFactory } from 'angular-maps';
+import { MapServiceProviderFactory } from './services/map-provider-factory.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,13 +80,14 @@ import { AppConfig } from './app.config';
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     NgUploaderModule,
-    CKEditorModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCkC7tfU7yfLjo119IttdtZ-FLXJMLK8rU'
-    })
+    CKEditorModule,  MapModule.forRoot()
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [AppConfig, PostService],
+  providers: [AppConfig, PostService,
+    {
+      provide: MapAPILoader, deps: [], useFactory: MapServiceProviderFactory
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
