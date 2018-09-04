@@ -25,18 +25,17 @@ import { CommentComponent } from './posts/comment/comment.component';
 import { RatingComponent } from './posts/rating/rating.component';
 import { UserConnectComponent } from './user/user-connect/user-connect.component';
 import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.component';
-import { SendInvitationComponent } from './send-invitation/send-invitation.component';
+import { SendInvitationComponent } from './invitations/send-invitation/send-invitation.component';
 import { UploadAvatarComponent } from './upload-avatar/upload-avatar.component';
-import { SendingInviComponent } from './sending-invi/sending-invi.component';
-import { ReceivingInviComponent } from './receiving-invi/receiving-invi.component';
+import { SendingInviComponent } from './invitations/sending-invi/sending-invi.component';
+import { ReceivingInviComponent } from './invitations/receiving-invi/receiving-invi.component';
 import {NgUploaderModule} from 'ngx-uploader';
-import { SenderUserComponent } from './sender-user/sender-user.component';
+import { SenderUserComponent } from './invitations/sender-user/sender-user.component';
 import { FeriendsListComponent } from './user/feriends-list/feriends-list.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { FavoritePlaceMapComponent } from './pages/acceuil-page/favorite-place-map/favorite-place-map.component';
 import { PostService } from './services/api-services/post.service';
-import { AppConfig } from './app.config';
 
 import { MapModule, MapAPILoader, 
   BingMapAPILoaderConfig, BingMapAPILoader, 
@@ -83,7 +82,7 @@ import { MapServiceProviderFactory } from './services/map-provider-factory.servi
     CKEditorModule,  MapModule.forRoot()
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [AppConfig, PostService,
+  providers: [PostService,
     {
       provide: MapAPILoader, deps: [], useFactory: MapServiceProviderFactory
   }

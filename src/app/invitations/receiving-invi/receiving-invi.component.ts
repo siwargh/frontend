@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { InvitationsService } from '../services/api-services/invitations.service';
+import { InvitationsService } from '../../services/api-services/invitations.service';
+
 
 @Component({
   selector: 'app-receiving-invi',

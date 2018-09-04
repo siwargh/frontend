@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { UserService } from '../services/api-services/user.service';
-import { IUser } from '../models';
-import { InvitationsService } from '../services/api-services/invitations.service';
+
 import { EventEmitter } from '@angular/core';
+import { IUser } from '../../models';
+import { UserService } from '../../services/api-services/user.service';
+import { InvitationsService } from '../../services/api-services/invitations.service';
 
 const avatarsFolder = 'http://localhost:3000/uploads/avatars/';
 const defaultAvatar = 'assets/images/default-avatar.jpg';

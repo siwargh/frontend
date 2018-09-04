@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/api-services/user.service';
-import { IUser } from '../models';
-import { InvitationsService } from '../services/api-services/invitations.service';
 import 'rxjs';
+import { IUser } from '../../models';
+import { UserService } from '../../services/api-services/user.service';
+import { InvitationsService } from '../../services/api-services/invitations.service';
 const avatarsFolder = 'http://localhost:3000/uploads/avatars/';
 @Component({
   selector: 'app-sending-invi',

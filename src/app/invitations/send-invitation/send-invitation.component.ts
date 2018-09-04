@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/api-services/user.service';
-import { IUser } from '../models';
+
 const avatarsFolder = 'http://localhost:3000/uploads/avatars/';
-import { InvitationsService } from '../services/api-services/invitations.service';
+
 import 'rxjs';
+import { UserService } from '../../services/api-services/user.service';
+import { InvitationsService } from '../../services/api-services/invitations.service';
 @Component({
   selector: 'app-send-invitation',
   templateUrl: './send-invitation.component.html',

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 
-import { AppConfig } from '../../app.config';
+import { apiUrl } from '../../app.config';
 import { IUser } from '../../models';
 import { map } from 'rxjs/operators';
 
@@ -17,7 +17,7 @@ export class UserService {
   
 
   getAll() {
-    return this.http.get('http://localhost:3000'+'/users/v1/all').pipe(
+    return this.http.get('http://localhost:3000' + '/users/v1/all').pipe(
     map((response: Response) => response.json()));
   }
 
@@ -27,11 +27,11 @@ export class UserService {
   }
 
   create(user) {
-    return this.http.post("http://localhost:3000" + '/users/v1/add', user);
+    return this.http.post('http://localhost:3000' + '/users/v1/add', user);
   }
 
   update(user: IUser) {
-    return this.http.put("http://localhost:3000" + '/users/' + user.id, user);
+    return this.http.put('http://localhost:3000' + '/users/' + user.id, user);
   }
 
   delete(_id: string) {

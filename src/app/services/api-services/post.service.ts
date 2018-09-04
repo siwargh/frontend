@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
-import { AppConfig } from '../../app.config';
+import { apiUrl } from '../../app.config';
 import {  IPost } from '../../models';
 
 import { map } from 'rxjs/operators';
@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 })
 export class PostService {
 
-  constructor(private http: Http, private config: AppConfig) { }
+  constructor(private http: Http) { }
 
 
   getAll() {

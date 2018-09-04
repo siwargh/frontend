@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 
-import { AppConfig } from '../../app.config';
+import { apiUrl } from '../../app.config';
 import { map } from 'rxjs/operators';
 import 'rxjs' ;
 import { Observable } from '../../../../node_modules/rxjs';
