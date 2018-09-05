@@ -52,8 +52,8 @@ export class SenderUserComponent implements OnInit {
   }
 
   declineInvitation(invitation) {
+    this.declineInvitationEvent.emit(invitation);
     this.invitationService.deleteInvitation(invitation._id)
     .subscribe(data => console.log('Deleted invitation', data));
-    this.declineInvitationEvent.emit(invitation);
   }
 }

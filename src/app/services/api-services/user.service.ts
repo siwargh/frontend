@@ -23,7 +23,6 @@ export class UserService {
 
   getById(id: string) {
     return this.http.get('http://localhost:3000/users/v1/' + id);
-   
   }
 
   create(user) {
