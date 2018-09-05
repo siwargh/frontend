@@ -7,22 +7,21 @@ import { IUser } from './models';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  private currentUser:IUser;
+  private currentUser: IUser;
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    
-      
-      if(this.getCurrentUser()){
+
+
+      if (this.getCurrentUser()) {
         return true;
       } else {
-        return false
+        return false;
       }
   }
 
-  getCurrentUser():IUser{
-      let user:IUser=JSON.parse(localStorage.getItem("currentUser"));
-      console.log("form authgarde",user);
+  getCurrentUser(): IUser {
+      const user: IUser = JSON.parse(localStorage.getItem('currentUser'));
       return user;
   }
 }

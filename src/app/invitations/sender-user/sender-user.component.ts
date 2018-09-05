@@ -16,6 +16,7 @@ const defaultAvatar = 'assets/images/default-avatar.jpg';
 export class SenderUserComponent implements OnInit {
   @Input('inv') inv: any;
   @Output() acceptInvitationEvent: EventEmitter<any> = new EventEmitter();
+  @Output() declineInvitationEvent: EventEmitter<any> = new EventEmitter();
 
   private _user: IUser = new IUser();
 
@@ -50,7 +51,9 @@ export class SenderUserComponent implements OnInit {
      this.acceptInvitationEvent.emit(invitation);
   }
 
-  rejectInvitation() {
-      alert('Reject Invitation Triggred');
+  declineInvitation(invitation) {
+    this.invitationService.deleteInvitation(invitation._id)
+    .subscribe(data => console.log('Deleted invitation', data));
+    this.declineInvitationEvent.emit(invitation);
   }
 }

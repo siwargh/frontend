@@ -15,13 +15,12 @@ export class NavbarComponent implements OnInit {
   constructor(private invitationService: InvitationsService) { }
 
   ngOnInit() {
-     
-    let id = this.currentUser._id;
+
+    const id = this.currentUser._id;
     this.invitationService.getPendingInCount(id)
       .subscribe(data => {
-        console.log(data);
-        this.countInPendingInvitation = data.message}
-      
+        this.countInPendingInvitation = data.message;}
+
       );
   }
 

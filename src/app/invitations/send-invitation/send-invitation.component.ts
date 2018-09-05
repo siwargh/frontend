@@ -23,7 +23,6 @@ export class SendInvitationComponent implements OnInit {
       data => {
         this.foreigners = data;
         this.foreigners = this.foreigners.filter(elm => elm._id !== this.currentUser._id);
-        console.log(this.foreigners);
       } );
   }
 

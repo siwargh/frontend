@@ -1,7 +1,7 @@
 import { Place } from './iplace';
 
 export class IPost {
-   id: string;
+   id?: string;
   author: string;
   content: any;
   create_date?: Date;

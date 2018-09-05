@@ -5,6 +5,8 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { apiUrl } from '../../app.config';
 import { map } from 'rxjs/operators';
 import 'rxjs' ;
+import 'rxjs/add/operator/map';
+
 import { Observable } from '../../../../node_modules/rxjs';
 
 @Injectable({
@@ -33,5 +35,9 @@ export class InvitationsService {
 
   acceptInvitation(invitation) {
     return this.http.put('http://localhost:3000/invitations/v1/invitations/accept', invitation);
+  }
+
+  deleteInvitation(id: string) {
+    return this.http.delete(apiUrl + '/invitations/v1/delete/' + id).map(data => data);
   }
 }

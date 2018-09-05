@@ -1,26 +1,15 @@
 <h3 class="text text-primary align-center">Mes Amis</h3>
 <hr>
-
-<div class="media">
-  <img class="d-flex align-self-center mr-3 circle" src="https://mdbootstrap.com/img/Photos/Others/placeholder6.jpg" alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0 font-weight-bold align ">Mohamed Salah</h5>
-    <span class="text"></span>
-  </div>
-</div>
-
-<div class="media">
-  <img class="d-flex align-self-center mr-3 circle" src="https://mdbootstrap.com/img/Photos/Others/placeholder6.jpg" alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0 font-weight-bold">Siwar Ghammam</h5>
-   
-  </div>
-</div>
-
-<div class="media">
-  <img class="d-flex align-self-center mr-3 circle" src="https://mdbootstrap.com/img/Photos/Others/placeholder6.jpg" alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0 font-weight-bold">Anwar Ghammam</h5>
-   
+<div *ngFor="let friend of myFriends;let i=index">
+  <div class="media">
+    <img class="d-flex align-self-center mr-3 circle" 
+    [src]="getAvatar(friend)" 
+    alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0 font-weight-bold align ">
+        {{getFullName(friend.firstname,friend.lastname)}}
+      </h5>
+      <span class="text"></span>
+    </div>
   </div>
 </div>

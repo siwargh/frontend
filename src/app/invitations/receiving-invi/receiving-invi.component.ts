@@ -24,4 +24,10 @@ export class ReceivingInviComponent implements OnInit {
       this.invitationsIn = this.invitationsIn.filter(inv => inv._id !== invitation._id);
   }
 
+  onDeclineInvitation(event) {
+    console.log('invitation in onDecline ==> backend', event);
+    const invitation = event;
+    this.invitationsIn = this.invitationsIn.filter(inv => inv._id !== invitation._id);
+  }
+
 }

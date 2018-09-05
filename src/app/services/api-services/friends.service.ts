@@ -15,7 +15,7 @@ export class FriendsService {
 
 
   getAll(id) {
-    return this.http.get(apiUrl + '/friends/v1/get/all/' + id).pipe(
+    return this.http.get(apiUrl.apiUrl + '/friends/v1/get/all/' + id).pipe(
     map((response: Response) => response.json()));
   }
 
