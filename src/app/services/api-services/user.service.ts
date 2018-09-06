@@ -14,7 +14,6 @@ export class UserService {
   headers: Headers;
   options: RequestOptions;
   constructor(private http: Http) { }
-  
 
   getAll() {
     return this.http.get('http://localhost:3000' + '/users/v1/all').pipe(
@@ -22,7 +21,8 @@ export class UserService {
   }
 
   getById(id: string) {
-    return this.http.get('http://localhost:3000/users/v1/' + id);
+    return this.http.get('http://localhost:3000/users/v1/' + id).pipe(
+      map((response: Response) => response.json()));
   }
 
   create(user) {

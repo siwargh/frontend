@@ -2,12 +2,15 @@
   class="w3-container w3-card w3-white w3-round w3-margin"
   *ngFor="let post of myPosts">
   <br>
-    <img src="https://mdbootstrap.com/img/Photos/Avatars/img(21).jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right"
+  <img [src]="getAvatar(getAuthor(post.author))" alt="Avatar" class="w3-left w3-circle w3-margin-right"
       style="width:60px">
-   
+  
       <span class="w3-right w3-opacity">{{post.publishing_date | date}}</span>
-    <h4>John Doe</h4>
-    
+    <h4>
+     
+      {{getFullName(getAuthor(post.author).firstname,getAuthor(post.author).lastname)}}
+     
+      </h4>
     <br>
     <hr class="w3-clear">
     <h3 class="text-primary">{{post.categorie}}</h3>
