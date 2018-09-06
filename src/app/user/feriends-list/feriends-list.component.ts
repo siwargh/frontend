@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FriendsService } from '../../services/api-services/friends.service';
 
-const currentUserId = JSON.parse(localStorage.getItem('currentUser'))._id;
+
 const avatarsFolder = 'http://localhost:3000/uploads/avatars/';
 
 @Component({
@@ -11,10 +11,12 @@ const avatarsFolder = 'http://localhost:3000/uploads/avatars/';
 })
 export class FeriendsListComponent implements OnInit {
   private myFriends = [];
+  private currentUserId;
   constructor(private friendService: FriendsService) { }
 
   ngOnInit() {
-    return this.friendService.getAll(currentUserId)
+    this.currentUserId = JSON.parse(localStorage.getItem('currentUser'))._id;
+    return this.friendService.getAll(this.currentUserId)
     .subscribe(data => this.myFriends = data.message);
   }
 
