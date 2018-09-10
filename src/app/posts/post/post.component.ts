@@ -24,16 +24,6 @@ export class PostComponent implements OnInit {
         this.myPosts = data;
         console.log(this.myPosts);
       });
-
-      this.userService.getAll().
-      subscribe(data => {
-        this.allUsers = data.message;
-      });
-
-  }
-
-  getAuthor(id) {
-    return this.allUsers ? this.allUsers.filter(u => u._id === id) : this.currentUser;
   }
 
   getAvatar(user) {
