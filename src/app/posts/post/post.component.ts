@@ -9,12 +9,12 @@ const avatarsFolder = 'http://localhost:3000/uploads/avatars/';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
+  private showAddComment = false;
   private currentUser;
   private myPosts: any = [];
   private allUsers: any = [];
   constructor(
-    private postService: PostService,
-    private userService: UserService
+    private postService: PostService
   ) { }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class PostComponent implements OnInit {
     this.postService.getById(this.currentUser._id)
       .subscribe(data => {
         this.myPosts = data;
-        console.log(this.myPosts);
+        console.table(this.myPosts);
       });
   }
 
@@ -38,6 +38,10 @@ export class PostComponent implements OnInit {
     return ' ' + firstname + ' ' + lastname;
   }
 
+  toggleAddCommentForm() {
+    this.showAddComment = !this.showAddComment;
+    console.log(this.showAddComment);
+  }
 
 }
 

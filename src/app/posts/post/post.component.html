@@ -19,12 +19,20 @@
     </p>
     <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
       <i class="fa fa-thumbs-up"></i>  Like</button>
-    <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
-      <i class="fa fa-comment"></i>  Comment</button>
+    <button type="button" 
+    class="w3-button w3-theme-d2 w3-margin-bottom"
+    (click)="toggleAddCommentForm()"
+    (eventCommentAdded)="toggleAddCommentForm()">
+      <i class="fa fa-comment">
+        </i>  Comment</button>
     <hr class="w3-clear">
 
     
-    <app-comment></app-comment>
+    <app-comment [_comments]="post.comments"></app-comment>
+    <app-add-comment
+        *ngIf="showAddComment"
+        [userId]="currentUser._id"
+        [postId]="post._id"></app-add-comment>
     <app-rating></app-rating>
 
 

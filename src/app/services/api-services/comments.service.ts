@@ -3,7 +3,7 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import {apiUrl} from '../../app.config';
 
 import {  ICOMMENT } from '../../models';
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 
 import { map } from 'rxjs/operators';
 
@@ -12,40 +12,31 @@ import { map } from 'rxjs/operators';
 })
 export class CommentsService {
 
-  
+
   constructor(private http: Http) { }
-  
 
   getAll() {
-    return this.http.get(apiUrl + '/comments', this.jwt()).pipe(
+    return this.http.get(apiUrl + '/comments' ).pipe(
     map((response: Response) => response.json()));
   }
 
   getById(_id: string) {
-    return this.http.get(apiUrl + '/comments/current/' + _id, this.jwt()).pipe(map((response: Response) => response.json()));
+    return this.http.get(apiUrl + '/comments/current/' + _id ).pipe(map((response: Response) => response.json()));
   }
 
-  create(comments: ICOMMENT) {
-    return this.http.post(apiUrl + '/comments/register', comments, this.jwt());
+  create(comment) {
+    return this.http.post(apiUrl + '/comments/v1/addcomment', comment );
+    // .pipe(map(response => response.json()));
   }
 
   update(comments: ICOMMENT) {
-    return this.http.put(apiUrl + '/comments/' + comments.id, comments, this.jwt());
+    return this.http.put(apiUrl + '/comments/' + comments.id, comments );
   }
 
   delete(_id: string) {
-    return this.http.delete(apiUrl + '/comments/' + _id, this.jwt());
+    return this.http.delete(apiUrl + '/comments/' + _id );
   }
 
-  // private helper methods
-  private jwt() {
-    // create authorization header with jwt token
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser && currentUser.token) {
-      const headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
-      return new RequestOptions({ headers: headers });
-    }
-  }
 }
 
 

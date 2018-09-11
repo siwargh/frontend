@@ -42,6 +42,8 @@ import { MapModule, MapAPILoader,
   WindowRef, DocumentRef, 
   MapServiceFactory, BingMapServiceFactory } from 'angular-maps';
 import { MapServiceProviderFactory } from './services/map-provider-factory.service';
+import { AddCommentComponent } from './posts/comment/add-comment/add-comment.component';
+import { OneCommentComponent } from './posts/comment/one-comment/one-comment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +71,9 @@ import { MapServiceProviderFactory } from './services/map-provider-factory.servi
     SenderUserComponent,
     FeriendsListComponent,
     EditPostComponent,
-    FavoritePlaceMapComponent
+    FavoritePlaceMapComponent,
+    AddCommentComponent,
+    OneCommentComponent
   ],
   imports: [
     ReactiveFormsModule,

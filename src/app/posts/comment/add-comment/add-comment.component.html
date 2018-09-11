@@ -1,0 +1,15 @@
+<form class="form-inline" role="form"  [formGroup]="addContent">
+  <div class="form-group">
+    <input 
+      class="form-control large" 
+      type="text" 
+      placeholder="Your comments"
+      name="content"
+      formControlName="content"
+      [formControl]="content">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-default"
+    (click)="addComment($event)">Add</button>
+  </div>
+</form>

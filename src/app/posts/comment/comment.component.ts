@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./comment.component.scss']
 })
 export class CommentComponent implements OnInit {
-  private comment=new FormControl('');
+  @Input() _comments;
   constructor() { }
 
   ngOnInit() {

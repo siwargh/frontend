@@ -1,0 +1,11 @@
+<li class="w3-clear">
+  <div class="commenterImage">
+    <img class="comment_author" [src]="getAvatar(_comment.author)">
+    <span class="badge ">{{ getFullName(_comment.author.firstname,_comment.author.lastname )}}</span>
+  </div>
+  <div class="commentText">
+    <p class="">{{_comment.content }}</p>
+    <span class="date sub-text">{{ _comment.comment_date | date}}</span>
+
+  </div>
+</li>
