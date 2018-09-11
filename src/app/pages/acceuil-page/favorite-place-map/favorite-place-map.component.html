@@ -1,21 +1,21 @@
+<i class="fa"></i>
 <div style="height: 303px">
-  <x-map #xmap [Options]="_options">
-      <x-map-marker
-          [Latitude]="getLatitude()"
-          [Longitude]="getLongitude()" 
-          [Title]="title" 
-          [IconUrl]="'assets/images/icon_user_map.png'" 
-          [IconInfo]="{
-              markerType: _markerTypeId.FontMarker,
-              fontName: 'FontAwesome',
-              fontSize: 23,
-              color: 'red',
-              markerOffsetRatio: { x: 0.5, y: 0.5 },
-              text: '\uF276'
-          }"> 
-          <info-box [DisableAutoPan]="true" [Title]="'My InfoBox'" [Description]="'Hi, this is the content of the <strong>info window</strong>. It is your responsibility to implement functionality such as close, etc...'">
-              <info-box-action [Label]="'Click Me'" (ActionClicked)="_click()"></info-box-action>
-          </info-box>   
-      </x-map-marker>
-  </x-map>
+    <x-map #xmap [Options]="_options" [Box]="_box">
+        <x-map-marker *ngFor="let m of _markers; let i=index" 
+        [Latitude]="m.latitude" 
+        [Longitude]="m.longitude" 
+        [Title]="_titles[i]" 
+        [IconInfo]="{
+            markerType: _markerTypeId.FontMarker,
+            fontName: 'FontAwesome',
+            fontSize: 24,
+            color: 'red',
+            markerOffsetRatio: { x: 0.5, y: 0.5 },
+            text: '\uF276'
+        }">
+            <x-info-box [DisableAutoPan]="true" [Title]="'DisDonc?'" [Description]="'Hi, dis quelques choses <strong>DisDonc</strong>.'">
+                <x-info-box-action [Label]="'Click Me'" (ActionClicked)="_click(i)"></x-info-box-action>
+            </x-info-box>
+        </x-map-marker>
+    </x-map>
 </div>

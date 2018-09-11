@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommentsService } from '../../../services/api-services/comments.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-comment',
@@ -19,21 +20,15 @@ export class AddCommentComponent implements OnInit {
     });
 
 
-  constructor(private commentService: CommentsService) { }
+  constructor(
+    private commentService: CommentsService,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
   addComment(event) {
-
     this.eventCommentAdded.emit('comment');
-    /*
-    console.log('-------- add content ------');
-    console.log('event :', event);
-    console.log('userId:' , this.userId);
-    console.log('PostId:', this.postId);
-    console.log('content', this.content.value);
-    */
     const myComment = {
       userId: this.userId,
       postId: this.postId,
@@ -43,5 +38,9 @@ export class AddCommentComponent implements OnInit {
     // console.log('the content',myComment);
     this.commentService.create(myComment)
       .subscribe(data => console.dir(data));
+
+      this.router.navigate(['/']);
   }
+
+
 }
