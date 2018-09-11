@@ -44,6 +44,7 @@ import { MapModule, MapAPILoader,
 import { MapServiceProviderFactory } from './services/map-provider-factory.service';
 import { AddCommentComponent } from './posts/comment/add-comment/add-comment.component';
 import { OneCommentComponent } from './posts/comment/one-comment/one-comment.component';
+import { SinglePostComponent } from './posts/single-post/single-post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +74,8 @@ import { OneCommentComponent } from './posts/comment/one-comment/one-comment.com
     EditPostComponent,
     FavoritePlaceMapComponent,
     AddCommentComponent,
-    OneCommentComponent
+    OneCommentComponent,
+    SinglePostComponent
   ],
   imports: [
     ReactiveFormsModule,

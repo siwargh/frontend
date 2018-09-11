@@ -2,38 +2,6 @@
   class="w3-container w3-card w3-white w3-round w3-margin"
   *ngFor="let post of myPosts">
   <br>
-  <img [src]="getAvatar(post.author)" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-      style="width:60px">
-  
-      <span class="w3-right w3-opacity">{{post.publishing_date | date}}</span>
-    <h4>
-     
-      {{getFullName(post.author.firstname,post.author.lastname)}}
-     
-      </h4>
-    <br>
-    <hr class="w3-clear">
-    <h3 class="text-primary">{{post.categorie}}</h3>
-    <p class="myContent" 
-    [innerHTML]="post.content">
-    </p>
-    <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
-      <i class="fa fa-thumbs-up"></i>  Like</button>
-    <button type="button" 
-    class="w3-button w3-theme-d2 w3-margin-bottom"
-    (click)="toggleAddCommentForm()"
-    (eventCommentAdded)="toggleAddCommentForm()">
-      <i class="fa fa-comment">
-        </i>  Comment</button>
-    <hr class="w3-clear">
-
-    
-    <app-comment [_comments]="post.comments"></app-comment>
-    <app-add-comment
-        *ngIf="showAddComment"
-        [userId]="currentUser._id"
-        [postId]="post._id"></app-add-comment>
-    <app-rating></app-rating>
-
+ <app-single-post [post]="post"></app-single-post>
 
 </div>

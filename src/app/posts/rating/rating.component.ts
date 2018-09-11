@@ -10,6 +10,7 @@ export class RatingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    event.preventDefault();
   }
 
 }
